@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CBTI | Cyber Persona Type Indicator</title>
+  <meta name="description" content="CBTI 数字赛博幽灵档案：30 题测出你的互联网人格切片。" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="grid-lines"></div>
+
+  <div class="app-shell">
+    <header class="top-strip">
+      <div class="brand-block">
+        <span class="brand-kicker">CYBER PERSONA ARCHIVE / 2026</span>
+        <div class="brand-row">
+          <h1>CBTI</h1>
+          <p>Digital Ghost Dossier</p>
+        </div>
+      </div>
+      <div class="status-cluster">
+        <span class="status-pill">Signal: unstable</span>
+        <span class="status-pill">Mode: archive scan</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="home-screen" class="screen active">
+        <div class="hero-panel panel">
+          <div class="hero-copy">
+            <span class="section-label">赛博人格扫描协议</span>
+            <h2>不是传统人格测试，是你在互联网废土里的生存切片。</h2>
+            <p class="hero-text">
+              进入 2026，社交媒体已经不是生活的附属品，而是人类认知、情绪和社交货币的主战场。
+              CBTI 用 30 个带压迫感的数字场景，测你在群聊、评论区、消息框和梗图洪流中的真实出厂设置。
+            </p>
+            <div class="hero-actions">
+              <button id="start-test" class="primary-btn">开始扫描</button>
+              <button id="jump-results" class="ghost-btn">查看项目说明</button>
+            </div>
+          </div>
+
+          <aside class="hero-aside">
+            <div class="signal-card ghost-core">
+              <span class="micro-tag">Archive Protocol</span>
+              <ul>
+                <li><strong>30 道情境题</strong><span>从深夜吃瓜、群聊站队到数字越界，全部是当代互联网高压场景。</span></li>
+                <li><strong>4 组人格扫描</strong><span>存在形态、冲突应对、介质偏好、社交边界四条主轴共同归档。</span></li>
+                <li><strong>1 份数字档案</strong><span>最后输出你的赛博人格原型、成分表、情绪回收与生存建议。</span></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="catalog-screen" class="screen">
+        <div class="panel catalog-panel">
+          <div class="catalog-head">
+            <div>
+              <span class="section-label">测试说明</span>
+              <h2>四组扫描，归档你的数字人格切片</h2>
+            </div>
+            <div class="hero-actions compact-actions">
+              <button id="catalog-start" class="primary-btn">直接开始测试</button>
+              <button id="preview-results" class="ghost-btn">预览 16 结果</button>
+              <button id="catalog-back" class="ghost-btn">返回首页</button>
+            </div>
+          </div>
+          <div id="catalog-grid" class="catalog-grid"></div>
+          <div class="catalog-note panel">
+            <span class="micro-tag">Disclaimer</span>
+            <p>本测试仅供娱乐与社交分享使用，不具备任何心理测量学效力，也不能作为人格判断、职业建议、关系决策或现实评估依据。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="preview-screen" class="screen">
+        <div class="panel catalog-panel">
+          <div class="catalog-head">
+            <div>
+              <span class="section-label">Result Preview</span>
+              <h2>16 个结果快速预览</h2>
+            </div>
+            <div class="hero-actions compact-actions">
+              <button id="preview-back-info" class="ghost-btn">返回说明</button>
+              <button id="preview-back-home" class="ghost-btn">返回首页</button>
+            </div>
+          </div>
+          <div id="preview-grid" class="preview-result-grid"></div>
+        </div>
+      </section>
+
+      <section id="quiz-screen" class="screen">
+        <div class="panel quiz-shell">
+          <div class="quiz-topbar">
+            <div>
+              <span class="section-label">人格扫描进行中</span>
+              <h2 id="question-count">Question 01 / 30</h2>
+            </div>
+            <div class="progress-wrap">
+              <div class="progress-rail">
+                <div id="progress-bar" class="progress-fill"></div>
+              </div>
+              <span id="progress-text">0% archived</span>
+            </div>
+          </div>
+
+          <article class="question-panel solo-panel">
+            <div class="question-meta">
+              <span id="dimension-title" class="part-chip">Part I</span>
+              <span id="question-scene" class="scene-label"></span>
+            </div>
+            <h3 id="question-title"></h3>
+            <p id="question-body"></p>
+            <div id="options" class="option-list"></div>
+            <div class="quiz-actions">
+              <button id="prev-question" class="ghost-btn">上一题</button>
+              <button id="restart-test" class="ghost-btn subtle-btn">重新开始</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="result-screen" class="screen">
+        <div class="panel result-shell">
+          <div class="result-head">
+            <span class="section-label">最终归档完成</span>
+            <div class="hero-actions compact-actions">
+              <button id="restart-from-result" class="primary-btn">再测一次</button>
+              <button id="back-home" class="ghost-btn">返回首页</button>
+            </div>
+          </div>
+
+          <div class="result-grid">
+            <section class="result-main panel inset-panel">
+              <div class="dossier-header">
+                <div>
+                  <span class="micro-tag">Psychological Snapshot</span>
+                  <h3 id="result-archetype"></h3>
+                </div>
+              </div>
+              <p id="result-summary" class="result-copy"></p>
+              <div class="quote-stack">
+                <blockquote id="result-roast"></blockquote>
+                <blockquote id="result-comfort" class="comfort-note"></blockquote>
+                <div class="advice-note">
+                  <span class="micro-tag">生存建议</span>
+                  <strong id="result-mantra"></strong>
+                  <p id="result-footer"></p>
+                </div>
+              </div>
+            </section>
+
+            <section class="result-side panel inset-panel">
+              <span class="micro-tag">Archive Card</span>
+              <div class="portrait-stage">
+                <div id="result-portrait" class="portrait-frame is-empty">
+                  <img id="result-image" alt="CBTI 人格结果形象图" />
+                  <div id="portrait-placeholder" class="portrait-placeholder">
+                    <strong id="portrait-code">LKMC</strong>
+                    <p>这里预留给该人格对应的 AI 生成形象图。当前会按结果顺序读取 `images/cbti_01.jpg` 到 `images/cbti_16.jpg`。</p>
+                  </div>
+                </div>
+                <div class="portrait-meta">
+                  <h2 id="result-code">LKMC</h2>
+                  <p id="result-title" class="result-title"></p>
+                </div>
+              </div>
+              <div id="ingredient-list" class="ingredient-list"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="stats-screen" class="screen">
+        <div class="panel catalog-panel">
+          <div class="catalog-head">
+            <div>
+              <span class="section-label">Archive Telemetry</span>
+              <h2>访问与归档统计面板</h2>
+            </div>
+            <div class="hero-actions compact-actions">
+              <button id="refresh-stats" class="primary-btn">刷新统计</button>
+              <button id="clear-local-stats" class="ghost-btn">清空本机统计</button>
+              <button id="stats-back-home" class="ghost-btn">返回首页</button>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <section class="stats-card">
+              <span class="micro-tag">Local Device</span>
+              <h3>当前设备统计</h3>
+              <p>这里记录的是当前浏览器本机数据，本地预览时也能正常累计。</p>
+              <div id="local-stats-metrics" class="stats-metrics"></div>
+              <div id="local-stats-ranking" class="stats-ranking"></div>
+            </section>
+
+            <section class="stats-card">
+              <span class="micro-tag">Netlify Summary</span>
+              <h3>线上汇总统计</h3>
+              <p>部署到 Netlify 后会自动汇总全站访问、开始测试与结果分布。此区域需要管理员口令才可查看。</p>
+              <div class="stats-auth">
+                <input id="cloud-stats-token" class="stats-token-input" type="password" placeholder="输入管理员口令后查看线上统计" />
+                <button id="save-stats-token" class="ghost-btn" type="button">保存口令</button>
+              </div>
+              <div id="cloud-stats-state" class="stats-state">正在尝试连接线上统计接口...</div>
+              <div id="cloud-stats-metrics" class="stats-metrics"></div>
+              <div id="cloud-stats-ranking" class="stats-ranking"></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>出自于 jiangxiaohuan33@gmail.com</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
