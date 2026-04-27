@@ -17,5 +17,6 @@ CBTI 像一台深夜联网后开始轻微发疯的扫描仪，把人丢进群聊
 
 ## 致谢
 相关参考：
-https://github.com/UnluckyNinja/SBTI-test（B站@蛆肉儿串儿）
+https://github.com/UnluckyNinja/SBTI-test
+
 https://github.com/Traveller2001/ABTI
